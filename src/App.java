@@ -25,6 +25,8 @@ public class App {
 
         Node<Integer> root = tree.getRoot();
 
+    
+        Ejercicio2.invertTree(root);
 
         System.out.println("Estructura visual del árbol INVERTIDO (rotado 90°):");
         
