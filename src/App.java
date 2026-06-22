@@ -1,7 +1,8 @@
 
-import structures.trees.BinaryTree;
+import structures.node.Node;
 import structures.trees.Ejercicio1;
 import structures.trees.Ejercicio2;
+import structures.trees.IntTree;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -16,14 +17,17 @@ public class App {
     }
 
     private static void runEjercicio2(){
-        Ejercicio2 ejercicio2 = new Ejercicio2();
-        int[] numeros = new int[] {5,3,7,2,4,6,8};
-        BinaryTree<Integer> tree = new BinaryTree<>();
+        int[] numeros = {5, 3, 7, 2, 4, 6, 8};
+        IntTree tree = new IntTree();
         for (int numero : numeros) {
             tree.add(numero);
         }
+
         Node<Integer> root = tree.getRoot();
-        ejercicio2.inverTree(root);             
+        
+
+        Ejercicio2.invertTree(root);  
+    
     }
 
 }
