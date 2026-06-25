@@ -6,7 +6,6 @@ public class Ejercicio1 {
     public static void insert(int[] numeros) {
         IntTree tree = new IntTree();
 
-        // 1. Insertamos los números en el árbol
         for (int numero : numeros) {
             tree.add(numero);
         }
