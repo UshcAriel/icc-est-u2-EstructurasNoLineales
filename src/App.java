@@ -1,3 +1,6 @@
+import collections.set.Sets;
+import java.util.Set;
+import models.Contacto;
 import structures.node.Node;
 import structures.trees.Depth;
 import structures.trees.Ejercicio1;
@@ -7,10 +10,10 @@ import structures.trees.ListLevels;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        runEjercicios();
-        runEjercicio2();
-        runEjercicio3();
-        runEjercicio4();
+        runSets();
+        runLinkedHashSet();
+        runTreeSet();
+        contruirHashSetContacto();
     }
 
     private static void runEjercicios(){
@@ -88,5 +91,54 @@ public class App {
         int profundidad = program.maxDepth(tree.getRoot());
 
         System.out.println("Output: " + profundidad);
+    }
+
+    private static void runSets(){
+        Sets sets = new Sets();
+
+        //Implementacion -> HashCode
+        System.out.println("* HashCode: ");
+        Set<String> hashSet = sets.construirHashSet();
+        System.err.println(hashSet);
+        System.err.println("Size =" + hashSet.size());
+        System.err.println(hashSet.contains("F"));
+
+        
+    }
+
+    private static void runLinkedHashSet(){
+        Sets sets = new Sets();
+
+        
+        System.out.println("* LinkedHashSet: ");
+        Set<String> hashSet = sets.construirLinkedHashSet();
+        System.err.println(hashSet);
+        System.err.println("Size =" + hashSet.size());
+        System.err.println(hashSet.contains("F"));
+
+        
+    }
+
+    private static void runTreeSet(){
+        Sets sets = new Sets();
+
+        
+        System.out.println("* TreeSet: ");
+        Set<String> hashSet = sets.construirTreeSet();
+        System.err.println(hashSet);
+        System.err.println("Size =" + hashSet.size());
+        System.err.println(hashSet.contains("F"));
+
+        
+    }
+
+    private static void contruirHashSetContacto(){
+        Sets sets = new Sets();
+
+        
+        System.out.println("* contruirHashSetContacto: ");
+        Set<Contacto> hashSet = sets.contruirHashSetContacto();
+        System.err.println(hashSet);
+        System.err.println("Size =" + hashSet.size());   
     }
 }
