@@ -1,4 +1,10 @@
+import collections.maps.Maps;
 import collections.set.Sets;
+import eva.Persona;
+import eva.PersonaController;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import models.Contacto;
 import structures.node.Node;
@@ -10,10 +16,9 @@ import structures.trees.ListLevels;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        runSets();
-        runLinkedHashSet();
-        runTreeSet();
-        contruirHashSetContacto();
+        contruirHashMap();
+        ejercicioUno();
+        
     }
 
     private static void runEjercicios(){
@@ -140,5 +145,48 @@ public class App {
         Set<Contacto> hashSet = sets.contruirHashSetContacto();
         System.err.println(hashSet);
         System.err.println("Size =" + hashSet.size());   
+    
     }
+
+    private static void contruirHashMap(){
+        Maps maps = new Maps();
+
+        Map<String, Integer> mapa = maps.contruirHashMap();
+
+        System.out.println("\nContenido del HashMap:");
+
+        for (Map.Entry<String, Integer> entry : mapa.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
+
+        
+
+    
+    }
+    private static void ejercicioUno(){
+        List<Persona> personas = new ArrayList<>();
+
+        personas.add(new Persona("Juan", 25));
+        personas.add(new Persona("Pedro", 40));
+        personas.add(new Persona("juan", 25)); 
+        personas.add(new Persona("Ana", 30));
+        personas.add(new Persona("Luis", 18));
+        personas.add(new Persona("Maria", 50));
+
+        PersonaController controller = new PersonaController();
+
+        Set<Persona> resultado = controller.filtrarYOrdenar(personas, 25);
+
+        for (Persona p : resultado) {
+            System.out.println(p);
+        }
+        
+
+        
+
+    
+    }
+
+     
+
 }
